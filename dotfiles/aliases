@@ -1,0 +1,65 @@
+#!/bin/bash
+
+# Usage: gca 'your_full_name' 'your_email'
+# Make sure to thank David Dobrynin
+
+function gca {
+  git filter-branch -f --env-filter "
+    GIT_AUTHOR_NAME='$1'; 
+    GIT_AUTHOR_EMAIL='$2'; 
+    GIT_COMMITTER_NAME='$1'; 
+    GIT_COMMITTER_EMAIL='$2';
+  "
+}
+
+function gcu {
+  git config --global user.name "$1";git config --global user.email "$2";
+}
+
+function mkcd {
+  mkdir "$1" && cd "$1";
+}
+
+#emoji stuff
+function emoji {
+  magick $1 -resize 128x128 emoji-$1
+}
+
+function partyemoji {
+  IFS="."; declare -a Array=($1);
+
+  convert "${Array[0]}.${Array[1]}" -resize $2x$2 1_party_emoji_partial.png
+  for i in {2..8}
+  do
+    convert "$(( i - 1 ))_party_emoji_partial.png" -set option:modulate:colorspace hsb -modulate 100,100,75 "${i}_party_emoji_partial.png"
+  done
+  convert *_party_emoji_partial.png "${Array[0]}_party.gif"
+  rm *_party_emoji_partial.png
+}
+
+# make `g` behave like `git status` with no args, or `git` with args
+g () {
+  if [ $# -eq 0 ]
+  then
+    git status
+  else
+    git "$@"
+  fi
+}
+__git_complete g _git
+
+#aliases
+
+alias b="bundle"
+alias ls="ls -A"
+alias irb="pry"
+
+alias gcm="git commit -m"
+alias gitgraph='git log --graph --decorate --oneline'
+
+# For lecturing
+alias atom="code"
+
+
+# For my eternal respect, dare to push your own changes into this repo
+# alias aa="atom . ;bundle install;bundle exec rspec"
