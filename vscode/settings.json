@@ -7,9 +7,11 @@
     "editor.tabSize": 2,
     "editor.fontSize": 14,
     "editor.minimap.enabled": false,
+    "editor.lineNumbers": "relative",
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Boxy Solarized Dark",
     "workbench.startupEditor": "newUntitledFile",
+
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
         "suppressCommitNotFoundWarning": false,
@@ -26,6 +28,7 @@
             "rails" : true
             }
     },
+    "ruby.lintDebounceTime": 50,
     "[javascript]": {
         "editor.rulers": [
             100
@@ -35,7 +38,7 @@
         "editor.rulers": [72, 79]
     },
     "[ruby]": {
-        "editor.rulers": [80, 100]
+        "editor.rulers": [80, 100],
     },
     "[javascriptreact]": {
         "editor.rulers": [100]

@@ -44,5 +44,9 @@ shopt -s dotglob
 # added by Miniconda3 installer
 export PATH="/Users/isak/miniconda3/bin:$PATH"
 
-#app academy shit
+# app academy shit
 alias gradingtime="source ~/appacademy/assess_grader.sh"
+
+# shell integration
+# allows 'jump to previous input', which is actually 'Previous Mark'
+source ~/.iterm2_shell_integration.bash
