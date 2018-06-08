@@ -48,7 +48,11 @@ g () {
 }
 __git_complete g _git
 
-#aliases
+function trash {
+  mv $1 ~/.Trash
+}
+
+# Aliases
 
 alias b="bundle"
 alias ls="ls -A"
