@@ -28,7 +28,6 @@
             "rails" : true
             }
     },
-    "ruby.lintDebounceTime": 50,
     "[javascript]": {
         "editor.rulers": [
             100
@@ -42,5 +41,6 @@
     },
     "[javascriptreact]": {
         "editor.rulers": [100]
-    }
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always"
 }
