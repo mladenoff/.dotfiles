@@ -7,21 +7,21 @@
     "editor.tabSize": 2,
     "editor.fontSize": 14,
     "editor.minimap.enabled": false,
-    "editor.lineNumbers": "relative",
+    "editor.lineNumbers": "on",
+    "files.trimTrailingWhitespace": true,
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Boxy Solarized Dark",
     "workbench.startupEditor": "newUntitledFile",
-
-    "gitlens.advanced.messages": {
-        "suppressCommitHasNoPreviousCommitWarning": false,
-        "suppressCommitNotFoundWarning": false,
-        "suppressFileNotUnderSourceControlWarning": false,
-        "suppressGitVersionWarning": false,
-        "suppressLineUncommittedWarning": false,
-        "suppressNoRepositoryWarning": false,
-        "suppressUpdateNotice": true,
-        "suppressWelcomeNotice": true
-    },
+    // "gitlens.advanced.messages": {
+    //     "suppressCommitHasNoPreviousCommitWarning": false,
+    //     "suppressCommitNotFoundWarning": false,
+    //     "suppressFileNotUnderSourceControlWarning": false,
+    //     "suppressGitVersionWarning": false,
+    //     "suppressLineUncommittedWarning": false,
+    //     "suppressNoRepositoryWarning": false,
+    //     "suppressUpdateNotice": true,
+    //     "suppressWelcomeNotice": true
+    // },
     "window.zoomLevel": 0,
     "ruby.lint": {
         "rubocop": {
