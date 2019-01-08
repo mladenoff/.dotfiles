@@ -2,12 +2,12 @@
 
 ## Git
 
-* Remove a file from all commits on the _current branch_
-  * `git filter-branch --tree-filter 'rm -f [filename]' HEAD`
-* Find branches that have been merged into [branchname]
-  * `git branch --merged [branchname]`
 * Fetch a remote branch and make a local one
   * `git fetch [reponame] [remotebranch]:[localbranch]`
+* Find branches that have been merged into [branchname]
+  * `git branch --merged [branchname]`
+* Remove a file from all commits on the _current branch only_
+  * `git filter-branch --tree-filter 'rm -f [filename]' HEAD`
 
 ## Networking
 
@@ -46,6 +46,6 @@ rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/metro* && rm -rf $TMPDIR/haste*
 ## Shell
 
 * Set up shell integration
-  * https://www.iterm2.com/documentation-shell-integration.html
+  * <https://www.iterm2.com/documentation-shell-integration.html>
   * This allows 'jump to last mark' (scroll to last input)
   * Must also add something to .bashprofile
