@@ -13,11 +13,13 @@
 
 ### Get my ip address
 
-```sh
-ifconfig | grep inet
-```
-
-Should be the first `192.168.` result.
+* Wireless
+  * `ipconfig getifaddr en0`
+* Wired
+  * `ipconfig getifaddr en1`
+* OR
+  * `ifconfig | grep inet
+    * Should be the first `192.168.` result.
 
 ## React Native
 
@@ -32,7 +34,9 @@ rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/metro* && rm -rf $TMPDIR/haste*
 ## Ruby
 
 * Turn `Hash` keys to snakecase from camel (say, after `JSON#parse!`)
-  * ```ruby
+  *
+
+  ```ruby
     json_string = '{"iWasJson": "but now im a hash"}'
     json_hash = JSON.parse!(json_string)
     snake_hash = json_hash.deep_transform_keys { |key| key.to_s.underscore }

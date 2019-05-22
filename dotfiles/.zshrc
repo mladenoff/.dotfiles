@@ -106,6 +106,11 @@ alias ss="spotify status"
 alias rs=./bin/rspec
 alias rk=./bin/rake
 alias spring=./bin/spring
+alias nuu="cd ~/dev/nuu"
+alias mobile="cd ~/dev/mobile"
+function mkcd {
+  mkdir "$1" && cd "$1";
+}
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -128,4 +133,18 @@ export GREP_OPTIONS='--color=auto'
 eval "$(direnv hook zsh)"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# Setting ANDROID_SDK for android-sdk
+export ANDROID_SDK="/Users/isakmladenoff/Library/Android/sdk"
+
+# Setting PATH to ANDROID_SDK emulator
+export PATH="${ANDROID_SDK}/emulator:${PATH}"
+
 export PATH="/Users/isakmladenoff/Library/Android/sdk/platform-tools":$PATH
+
+function swap1() {
+  find . -name *$1* -maxdepth 1 -type f -exec zsh -c 'mv "$1" "${1/zo/bo}"' -- {} \;
+}
+
+function swap() {
+  find . -name *$1* -maxdepth 1 -type f
+}
