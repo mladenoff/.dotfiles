@@ -49,6 +49,9 @@ rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/metro* && rm -rf $TMPDIR/haste*
 
 ## Shell
 
+* Pipe to clipbaord (macOS)
+  * `| pbcopy`
+
 * Set up shell integration
   * <https://www.iterm2.com/documentation-shell-integration.html>
   * This allows 'jump to last mark' (scroll to last input)

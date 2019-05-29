@@ -99,15 +99,24 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="ls -a"
+
 alias rndt="open \"rndebugger://set-debugger-loc?host=localhost&port=8081\""
 alias tempty="rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/metro* && rm -rf $TMPDIR/haste* && rm -rf $TMPDIR/yarn* && rm -rf $TMPDIR/npm* && rm -rf $TMPDIR/jest*"
+
 alias s="spotify"
 alias ss="spotify status"
+
 alias rs=./bin/rspec
 alias rk=./bin/rake
 alias spring=./bin/spring
+
 alias nuu="cd ~/dev/nuu"
 alias mobile="cd ~/dev/mobile"
+
+alias dotfiles="cd ~/.dotfiles"
+
+alias scj="node $HOME/.dotfiles/scripts/swap-ip-config-json.js"
+
 function mkcd {
   mkdir "$1" && cd "$1";
 }
