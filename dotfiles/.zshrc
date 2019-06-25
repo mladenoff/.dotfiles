@@ -143,12 +143,12 @@ eval "$(direnv hook zsh)"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Setting ANDROID_SDK for android-sdk
-export ANDROID_SDK="/Users/isakmladenoff/Library/Android/sdk"
+export ANDROID_SDK="${HOME}/Library/Android/sdk"
 
 # Setting PATH to ANDROID_SDK emulator
 export PATH="${ANDROID_SDK}/emulator:${PATH}"
 
-export PATH="/Users/isakmladenoff/Library/Android/sdk/platform-tools":$PATH
+export PATH="${HOME}/Library/Android/sdk/platform-tools":$PATH
 
 function swap1() {
   find . -name *$1* -maxdepth 1 -type f -exec zsh -c 'mv "$1" "${1/zo/bo}"' -- {} \;

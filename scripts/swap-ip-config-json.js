@@ -20,7 +20,7 @@ const swapConfigJsonIp = () => {
 
   const newData = JSON.stringify(parsedData, null, 2) // format w/ 2 spaces
 
-  fs.writeFileSync(configJson, newData)
+  fs.writeFileSync(configJson, newData + '\n')
 
   return parsedData.development.apiBaseUrl
 }

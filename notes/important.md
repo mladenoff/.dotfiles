@@ -8,6 +8,8 @@
   * `git branch --merged [branchname]`
 * Remove a file from all commits on the _current branch only_
   * `git filter-branch --tree-filter 'rm -f [filename]' HEAD`
+* Delete all branches that are merged in `development` (but don't delete `master`, `development`, or `staging`)
+  * `git branch --merged development | egrep -v "(^\*|master|development|staging)" | xargs git branch --delete`
 
 ## Networking
 
