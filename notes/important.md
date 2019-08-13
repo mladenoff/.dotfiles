@@ -10,6 +10,15 @@
   * `git filter-branch --tree-filter 'rm -f [filename]' HEAD`
 * Delete all branches that are merged in `development` (but don't delete `master`, `development`, or `staging`)
   * `git branch --merged development | egrep -v "(^\*|master|development|staging)" | xargs git branch --delete`
+* List ten oldest branches that have been merged into `development`
+  * `g for-each-ref --sort=committerdate --count=10 refs/heads --format='%(refname:short)' --merged development`
+
+`g for-each-ref --sort=committerdate --count=10 refs/heads --format='%(refname:short)' --merged development | egrep -v "(^\*|master|development|staging)" | xargs git branch --delete`
+
+`g for-each-ref --sort=committerdate --count=2 refs/heads --format='%(refname:short)' --merged development | egrep -v "(^\*|master|development|staging)" | xargs git branch --delete`
+
+* See what time of day you make your commits
+`git log --author="Isak" --date=iso | perl -nalE 'if (/^Date:\s+[\d-]{10}\s(\d{2})/) { say $1+0 }' | sort | uniq -c|perl -MList::Util=max -nalE '$h{$F[1]} = $F[0]; }{ $m = max values %h; foreach (0..23) { $h{$_} = 0 if not exists $h{$_} } foreach (sort {$a <=> $b } keys %h) { say sprintf "%02d - %4d %s", $_, $h{$_}, "*"x ($h{$_} / $m * 50); }'`
 
 ## Networking
 
