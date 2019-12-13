@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+;# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -115,7 +115,7 @@ alias mobile="cd ~/dev/mobile"
 
 alias dotfiles="cd ~/.dotfiles"
 
-alias scj="node $HOME/.dotfiles/scripts/swap-ip-config-json.js"
+alias swapip="node $HOME/.dotfiles/scripts/swap-ip-config-json.js"
 
 function mkcd {
   mkdir "$1" && cd "$1";

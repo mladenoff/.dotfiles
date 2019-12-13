@@ -9,7 +9,8 @@
         "editor.rulers": [
             100,
             130
-        ]
+        ],
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
     "[javascriptreact]": {
         "editor.rulers": [
@@ -40,7 +41,8 @@
     "bracket-pair-colorizer-2.showBracketsInGutter": true,
     "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
     "breadcrumbs.enabled": true,
-    "editor.fontFamily": "'Fira Code', Hack, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontFamily": "'FiraCode-Retina', 'Fira Code', Hack, Menlo, Monaco, 'Courier New', monospace",
+    // "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "editor.fontSize": 14,
     "editor.formatOnPaste": true,
@@ -63,6 +65,7 @@
         "suppressWelcomeNotice": true
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
+    "ruby.intellisense": "rubyLocate",
     "ruby.lint": {
         "rubocop": {
             "lint": true,
@@ -72,7 +75,6 @@
     },
     "ruby.lintDebounceTime": 250,
     "search.location": "sidebar",
-    "search.usePCRE2": true,
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "window.zoomLevel": 0,
     "workbench.activityBar.visible": false,
