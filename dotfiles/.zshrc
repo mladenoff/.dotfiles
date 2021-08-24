@@ -128,13 +128,19 @@ alias ber="bundle exec rspec"
 
 alias swapip="node $HOME/.dotfiles/scripts/swap-ip-config-json.js"
 
-alias branchify="ruby $HOME/.dotfiles/branchify.rb"
+alias branchify="$HOME/.dotfiles/branchify.rb"
 alias b=branchify
 
 # "Prune to main" - Delete all branches that are merged in `main` (but don't delete `main`, `development`, or `staging`)
 function ptm {
   git fetch --all
   git branch --merged origin/main | egrep -v "(^\*|main|development|staging)" | xargs git branch --delete
+}
+
+# "Prune to staging" - Delete all branches that are merged in `staging` (but don't delete `main`, `development`, or `staging`)
+function pts {
+  git fetch --all
+  git branch --merged origin/staging | egrep -v "(^\*|main|development|staging)" | xargs git branch --delete
 }
 
 function mkcd {
