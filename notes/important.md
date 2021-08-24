@@ -4,21 +4,38 @@
 
 * Fetch a remote branch and make a local one
   * `git fetch [reponame] [remotebranch]:[localbranch]`
+
 * Find branches that have been merged into [branchname]
   * `git branch --merged [branchname]`
+
 * Remove a file from all commits on the _current branch only_
-  * `git filter-branch --tree-filter 'rm -f [filename]' HEAD`
-* Delete all branches that are merged in `master` (but don't delete `master`, `development`, or `staging`)
-  * `git branch --merged master | egrep -v "(^\*|master|development|staging)" | xargs git branch --delete`
+
+  ```sh
+  git filter-branch --tree-filter 'rm -f [filename]' HEAD
+  ```
+
+* Delete all branches that are merged in `main` (but don't delete `main`, `development`, or `staging`)
+  *
+
+  ```sh
+  git branch --merged main | egrep -v "(^\*|main|development|staging)" | xargs git branch --delete
+  ```
+
+* Delete all branches that are merged in `staging` (but don't delete `main`, `development`, or `staging`)
+  ```sh
+  git branch --merged staging | egrep -v "(^\*|main|development|staging)" | xargs git branch --delete`
+  ```
+
 * List ten oldest branches that have been merged into `development`
   * `g for-each-ref --sort=committerdate --count=10 refs/heads --format='%(refname:short)' --merged development`
-
-`g for-each-ref --sort=committerdate --count=10 refs/heads --format='%(refname:short)' --merged development | egrep -v "(^\*|master|development|staging)" | xargs git branch --delete`
-
-`g for-each-ref --sort=committerdate --count=2 refs/heads --format='%(refname:short)' --merged development | egrep -v "(^\*|master|development|staging)" | xargs git branch --delete`
+  * `g for-each-ref --sort=committerdate --count=10 refs/heads --format='%(refname:short)' --merged development | egrep -v "(^\*|master|development|staging)" | xargs git branch --delete`
+  * `g for-each-ref --sort=committerdate --count=2 refs/heads --format='%(refname:short)' --merged development | egrep -v "(^\*|master|development|staging)" | xargs git branch --delete`
 
 * See what time of day you make your commits
-`git log --author="Isak" --date=iso | perl -nalE 'if (/^Date:\s+[\d-]{10}\s(\d{2})/) { say $1+0 }' | sort | uniq -c|perl -MList::Util=max -nalE '$h{$F[1]} = $F[0]; }{ $m = max values %h; foreach (0..23) { $h{$_} = 0 if not exists $h{$_} } foreach (sort {$a <=> $b } keys %h) { say sprintf "%02d - %4d %s", $_, $h{$_}, "*"x ($h{$_} / $m * 50); }'`
+
+  ```sh
+  git log --author="Isak" --date=iso | perl -nalE 'if (/^Date:\s+[\d-]{10}\s(\d{2})/) { say $1+0 }' | sort | uniq -c|perl -MList::Util=max -nalE '$h{$F[1]} = $F[0]; }{ $m = max values %h; foreach (0..23) { $h{$_} = 0 if not exists $h{$_} } foreach (sort {$a <=> $b } keys %h) { say sprintf "%02d - %4d %s", $_, $h{$_}, "*"x ($h{$_} / $m * 50); }'
+  ```
 
 ## Networking
 
@@ -47,16 +64,12 @@ rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/metro* && rm -rf $TMPDIR/haste*
 * Turn `Hash` keys to snakecase from camel (say, after `JSON#parse!`)
   *
 
-  ```ruby
+    ```ruby
     json_string = '{"iWasJson": "but now im a hash"}'
     json_hash = JSON.parse!(json_string)
     snake_hash = json_hash.deep_transform_keys { |key| key.to_s.underscore }
     snake_hash
     ```
-
-```ruby
-    ENV['CONTENTFUL_PUBLISHED_API_KEY' = '3e38777bc9b923715f2e07bccff29a7e52f3a884f7c8cdaad7e226fa9d76125f'
-```
 
 ## Shell
 

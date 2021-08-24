@@ -6,11 +6,12 @@
         "editor.tabSize": 4
     },
     "[javascript]": {
+        "editor.autoClosingBrackets": "never",
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
         "editor.rulers": [
             100,
             130
-        ],
-        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+        ]
     },
     "[javascriptreact]": {
         "editor.rulers": [
@@ -41,8 +42,9 @@
     "bracket-pair-colorizer-2.showBracketsInGutter": true,
     "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
     "breadcrumbs.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.autoClosingBrackets": "never",
     "editor.fontFamily": "'FiraCode-Retina', 'Fira Code', Hack, Menlo, Monaco, 'Courier New', monospace",
-    // "editor.fontFamily": "Hack, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "editor.fontSize": 14,
     "editor.formatOnPaste": true,
@@ -52,6 +54,9 @@
     "editor.suggestSelection": "first",
     "editor.tabSize": 2,
     "explorer.autoReveal": false,
+    "files.associations": {
+        ".envrc": "shellscript"
+    },
     "files.trimTrailingWhitespace": true,
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
@@ -65,6 +70,8 @@
         "suppressWelcomeNotice": true
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
+    "kite.showWelcomeNotificationOnStartup": false,
+    "redhat.telemetry.enabled": true,
     "ruby.intellisense": "rubyLocate",
     "ruby.lint": {
         "rubocop": {
@@ -74,9 +81,9 @@
         }
     },
     "ruby.lintDebounceTime": 250,
-    "search.location": "sidebar",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "window.zoomLevel": 0,
+    "typescript.preferences.quoteStyle": "single",
+    "window.zoomLevel": 1,
+    // "ruby.rubocop.configFilePath": "/path/to/config/.rubocop.yml",
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Boxy Solarized Dark",
     "workbench.startupEditor": "newUntitledFile"

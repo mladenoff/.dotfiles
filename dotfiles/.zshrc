@@ -110,15 +110,51 @@ alias rs=./bin/rspec
 alias rk=./bin/rake
 alias spring=./bin/spring
 
-alias nuu="cd ~/dev/nuu"
+alias dev="cd ~/dev"
+alias core-phx="cd ~/dev/core-phx"
+alias core="cd ~/dev/core"
+alias mobile-phx="cd ~/dev/mobile-phx"
 alias mobile="cd ~/dev/mobile"
+alias portal="cd ~/dev/portal"
+alias web-phx="cd ~/dev/web-phx"
+alias web="cd ~/dev/web"
+alias www="cd ~/dev/www"
+alias .dotfiles="cd ~/.dotfiles"
 
-alias dotfiles="cd ~/.dotfiles"
+alias dotfiles="code ~/.dotfiles"
+
+alias be="bundle exec"
+alias ber="bundle exec rspec"
 
 alias swapip="node $HOME/.dotfiles/scripts/swap-ip-config-json.js"
 
+alias branchify="ruby $HOME/.dotfiles/branchify.rb"
+alias b=branchify
+
+# "Prune to main" - Delete all branches that are merged in `main` (but don't delete `main`, `development`, or `staging`)
+function ptm {
+  git fetch --all
+  git branch --merged origin/main | egrep -v "(^\*|main|development|staging)" | xargs git branch --delete
+}
+
 function mkcd {
   mkdir "$1" && cd "$1";
+}
+
+function rcm {
+  rubocop "$1" -c ~/.rubocop.yml
+}
+
+function rcma {
+  rubocop "$1" -c ~/.rubocop.yml -a
+}
+
+function rcmu {
+  git ls-files -m | xargs ls -1 2>/dev/null | xargs rubocop -c ~/.rubocop.yml
+}
+
+function rcmua {
+  git ls-files -m | xargs ls -1 2>/dev/null | xargs rubocop -c ~/.rubocop.yml -a
 }
 
 export NVM_DIR="$HOME/.nvm"
