@@ -128,8 +128,10 @@ alias ber="bundle exec rspec"
 
 alias swapip="node $HOME/.dotfiles/scripts/swap-ip-config-json.js"
 
-alias branchify="$HOME/.dotfiles/branchify.rb"
+alias branchify="$HOME/.dotfiles/scripts/branchify.rb"
 alias b=branchify
+
+alias datica-size="printf '\e[8;100;80t'"
 
 # "Prune to main" - Delete all branches that are merged in `main` (but don't delete `main`, `development`, or `staging`)
 function ptm {
@@ -192,6 +194,14 @@ export PATH="${ANDROID_SDK}/emulator:${PATH}"
 
 export PATH="${HOME}/Library/Android/sdk/platform-tools":$PATH
 
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export PIVOTAL_TOKEN='ad9f2cc0f09bb7281d15a23ea1a50490'
+
 function swap1() {
   find . -name *$1* -maxdepth 1 -type f -exec zsh -c 'mv "$1" "${1/zo/bo}"' -- {} \;
 }
@@ -199,3 +209,4 @@ function swap1() {
 function swap() {
   find . -name *$1* -maxdepth 1 -type f
 }
+export PATH="/usr/local/opt/postgresql@13/bin:$PATH"

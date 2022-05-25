@@ -32,22 +32,24 @@
             130
         ]
     },
+    "[shellscript]": {
+        "editor.rulers": [
+            80,
+            100,
+            130
+        ]
+    },
     "atomKeymap.promptV3Features": true,
-    "bracket-pair-colorizer-2.colors": [
-        "#b58900",
-        "#d33682",
-        "#2aa198"
-    ],
-    "bracket-pair-colorizer-2.scopeLineRelativePosition": false,
-    "bracket-pair-colorizer-2.showBracketsInGutter": true,
-    "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
     "breadcrumbs.enabled": true,
     "diffEditor.ignoreTrimWhitespace": false,
     "editor.autoClosingBrackets": "never",
+    "editor.bracketPairColorization.enabled": true,
     "editor.fontFamily": "'FiraCode-Retina', 'Fira Code', Hack, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "editor.fontSize": 14,
     "editor.formatOnPaste": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.inlineSuggest.enabled": true,
     "editor.lineNumbers": "on",
     "editor.minimap.enabled": false,
     "editor.scrollBeyondLastLine": false,
@@ -58,6 +60,12 @@
         ".envrc": "shellscript"
     },
     "files.trimTrailingWhitespace": true,
+    "github.copilot.enable": {
+        "*": true,
+        "markdown": true,
+        "plaintext": false,
+        "yaml": false
+    },
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
         "suppressCommitNotFoundWarning": false,
@@ -82,9 +90,18 @@
     },
     "ruby.lintDebounceTime": 250,
     "typescript.preferences.quoteStyle": "single",
-    "window.zoomLevel": 1,
     // "ruby.rubocop.configFilePath": "/path/to/config/.rubocop.yml",
     "workbench.activityBar.visible": false,
     "workbench.colorTheme": "Boxy Solarized Dark",
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorCustomizations": {
+        "editorBracketHighlight.foreground1": "#5caeef",
+        "editorBracketHighlight.foreground2": "#dfb976",
+        "editorBracketHighlight.foreground3": "#c172d9",
+        "editorBracketHighlight.foreground4": "#4fb1bc",
+        "editorBracketHighlight.foreground5": "#97c26c",
+        "editorBracketHighlight.foreground6": "#abb2c0",
+        "editorBracketHighlight.unexpectedBracket.foreground": "#dc322f"
+    },
+    "window.zoomLevel": 1,
 }
