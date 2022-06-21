@@ -1,4 +1,4 @@
-# If you come from bash you might have to change your $PATH.
+;# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -99,17 +99,70 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="ls -a"
+
 alias rndt="open \"rndebugger://set-debugger-loc?host=localhost&port=8081\""
 alias tempty="rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/metro* && rm -rf $TMPDIR/haste* && rm -rf $TMPDIR/yarn* && rm -rf $TMPDIR/npm* && rm -rf $TMPDIR/jest*"
+
 alias s="spotify"
 alias ss="spotify status"
+
 alias rs=./bin/rspec
 alias rk=./bin/rake
 alias spring=./bin/spring
-alias nuu="cd ~/dev/nuu"
+
+alias dev="cd ~/dev"
+alias core-phx="cd ~/dev/core-phx"
+alias core="cd ~/dev/core"
+alias mobile-phx="cd ~/dev/mobile-phx"
 alias mobile="cd ~/dev/mobile"
+alias portal="cd ~/dev/portal"
+alias web-phx="cd ~/dev/web-phx"
+alias web="cd ~/dev/web"
+alias www="cd ~/dev/www"
+alias .dotfiles="cd ~/.dotfiles"
+
+alias dotfiles="code ~/.dotfiles"
+
+alias be="bundle exec"
+alias ber="bundle exec rspec"
+
+alias swapip="node $HOME/.dotfiles/scripts/swap-ip-config-json.js"
+
+alias branchify="$HOME/.dotfiles/scripts/branchify.rb"
+alias b=branchify
+
+alias datica-size="printf '\e[8;100;80t'"
+
+# "Prune to main" - Delete all branches that are merged in `main` (but don't delete `main`, `development`, or `staging`)
+function ptm {
+  git fetch --all
+  git branch --merged origin/main | egrep -v "(^\*|main|development|staging)" | xargs git branch --delete
+}
+
+# "Prune to staging" - Delete all branches that are merged in `staging` (but don't delete `main`, `development`, or `staging`)
+function pts {
+  git fetch --all
+  git branch --merged origin/staging | egrep -v "(^\*|main|development|staging)" | xargs git branch --delete
+}
+
 function mkcd {
   mkdir "$1" && cd "$1";
+}
+
+function rcm {
+  rubocop "$1" -c ~/.rubocop.yml
+}
+
+function rcma {
+  rubocop "$1" -c ~/.rubocop.yml -a
+}
+
+function rcmu {
+  git ls-files -m | xargs ls -1 2>/dev/null | xargs rubocop -c ~/.rubocop.yml
+}
+
+function rcmua {
+  git ls-files -m | xargs ls -1 2>/dev/null | xargs rubocop -c ~/.rubocop.yml -a
 }
 
 export NVM_DIR="$HOME/.nvm"
@@ -134,12 +187,20 @@ eval "$(direnv hook zsh)"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Setting ANDROID_SDK for android-sdk
-export ANDROID_SDK="/Users/isakmladenoff/Library/Android/sdk"
+export ANDROID_SDK="${HOME}/Library/Android/sdk"
 
 # Setting PATH to ANDROID_SDK emulator
 export PATH="${ANDROID_SDK}/emulator:${PATH}"
 
-export PATH="/Users/isakmladenoff/Library/Android/sdk/platform-tools":$PATH
+export PATH="${HOME}/Library/Android/sdk/platform-tools":$PATH
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export PIVOTAL_TOKEN='ad9f2cc0f09bb7281d15a23ea1a50490'
 
 function swap1() {
   find . -name *$1* -maxdepth 1 -type f -exec zsh -c 'mv "$1" "${1/zo/bo}"' -- {} \;
@@ -148,3 +209,4 @@ function swap1() {
 function swap() {
   find . -name *$1* -maxdepth 1 -type f
 }
+export PATH="/usr/local/opt/postgresql@13/bin:$PATH"
