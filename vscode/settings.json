@@ -62,38 +62,30 @@
     "files.trimTrailingWhitespace": true,
     "github.copilot.enable": {
         "*": true,
-        "markdown": true,
+        "yaml": true,
         "plaintext": false,
-        "yaml": false
+        "markdown": true
     },
     "gitlens.advanced.messages": {
-        "suppressCommitHasNoPreviousCommitWarning": false,
-        "suppressCommitNotFoundWarning": false,
-        "suppressFileNotUnderSourceControlWarning": false,
-        "suppressGitVersionWarning": false,
-        "suppressLineUncommittedWarning": false,
-        "suppressNoRepositoryWarning": false,
-        "suppressShowKeyBindingsNotice": true,
-        "suppressUpdateNotice": true,
-        "suppressWelcomeNotice": true
+        "suppressLineUncommittedWarning": true
     },
     "javascript.updateImportsOnFileMove.enabled": "always",
     "kite.showWelcomeNotificationOnStartup": false,
     "redhat.telemetry.enabled": true,
     "ruby.intellisense": "rubyLocate",
-    "ruby.lint": {
-        "rubocop": {
-            "lint": true,
-            "path": "/Users/isakmladenoff/.rvm/gems/ruby-2.4.2@nuu/wrappers",
-            "rails": true
-        }
-    },
+    // "ruby.lint": {
+    //     "rubocop": {
+    //         "lint": true,
+    //         "path": "",
+    //         "rails": true
+    //     }
+    // },
     "ruby.lintDebounceTime": 250,
+    "ruby.rubocop.configFilePath": "/Users/isakmladenoff/dev/core/.rubocop.yml",
+    "ruby.rubocop.executePath": "",
+    "ruby.rubocop.onSave": true,
     "typescript.preferences.quoteStyle": "single",
-    // "ruby.rubocop.configFilePath": "/path/to/config/.rubocop.yml",
     "workbench.activityBar.visible": false,
-    "workbench.colorTheme": "Boxy Solarized Dark",
-    "workbench.startupEditor": "newUntitledFile",
     "workbench.colorCustomizations": {
         "editorBracketHighlight.foreground1": "#5caeef",
         "editorBracketHighlight.foreground2": "#dfb976",
@@ -103,5 +95,10 @@
         "editorBracketHighlight.foreground6": "#abb2c0",
         "editorBracketHighlight.unexpectedBracket.foreground": "#dc322f"
     },
+    "workbench.colorTheme": "Boxy Solarized Dark",
+    "workbench.startupEditor": "newUntitledFile",
     "window.zoomLevel": 1,
+    "githubPullRequests.pullBranch": "never",
+    "editor.stickyScroll.enabled": true,
+    "git.autofetch": true
 }

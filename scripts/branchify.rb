@@ -25,8 +25,8 @@ class Branchifier # rubocop:disable Style/Documentation
   end
 
   def title=(title)
-    @title = title.gsub(/[^A-z\d\s]/, '')
-    @title.gsub!(/\s+/, '-')
+    @title = title.gsub(/[^A-z\d\s.]/, '')
+    @title.gsub!(/[.\s+]/, '-')
     @title.gsub!(/-+$/, '')
     @title.downcase!
   end

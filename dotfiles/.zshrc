@@ -111,13 +111,16 @@ alias rk=./bin/rake
 alias spring=./bin/spring
 
 alias dev="cd ~/dev"
-alias core-phx="cd ~/dev/core-phx"
+# alias core-phx="cd ~/dev/core-phx"
 alias core="cd ~/dev/core"
-alias mobile-phx="cd ~/dev/mobile-phx"
+alias core-arx="cd ~/dev/core-arx"
+# alias mobile-phx="cd ~/dev/mobile-phx"
 alias mobile="cd ~/dev/mobile"
+alias mobile-arx="cd ~/dev/mobile-arx"
 alias portal="cd ~/dev/portal"
-alias web-phx="cd ~/dev/web-phx"
+# alias web-phx="cd ~/dev/web-phx"
 alias web="cd ~/dev/web"
+alias web-arx="cd ~/dev/web-arx"
 alias www="cd ~/dev/www"
 alias .dotfiles="cd ~/.dotfiles"
 
@@ -143,6 +146,11 @@ function ptm {
 function pts {
   git fetch --all
   git branch --merged origin/staging | egrep -v "(^\*|main|development|staging)" | xargs git branch --delete
+}
+
+function ptd {
+  git fetch --all
+  git branch --merged origin/development | egrep -v "(^\*|main|development|staging)" | xargs git branch --delete
 }
 
 function mkcd {
@@ -210,3 +218,4 @@ function swap() {
   find . -name *$1* -maxdepth 1 -type f
 }
 export PATH="/usr/local/opt/postgresql@13/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
